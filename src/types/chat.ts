@@ -47,7 +47,7 @@ export interface Folder {
   color?: string;
 }
 
-export type ModelOptions = 'open-mistral-7b' | 'open-mixtral-8x7b' | 'mistral-small' | 'mistral-medium' | 'mistral-small-latest' | 'mistral-medium-latest' | 'mistral-large-latest' ;
+export type ModelOptions = 'open-mistral-7b' | 'open-mixtral-8x7b' | 'open-mixtral-8x22b' | 'mistral-small-latest' | 'mistral-medium-latest' | 'mistral-large-latest' | 'mistral-embed' | 'codestral-latest' ;
 
 export type TotalTokenUsed = {
   [model in ModelOptions]?: {

@@ -17,7 +17,7 @@ const TokenCount = React.memo(() => {
   const model = useStore((state) =>
     state.chats
       ? state.chats[state.currentChatIndex].config.model
-      : 'mistral-small'
+      : 'mistral-small-latest'
   );
 
   const cost = useMemo(() => {

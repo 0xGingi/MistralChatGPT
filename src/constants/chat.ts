@@ -20,9 +20,12 @@ Respond using Markdown.`;
 export const modelOptions: ModelOptions[] = [
   'open-mistral-7b',
   'open-mixtral-8x7b',
+  'open-mixtral-8x22b',
   'mistral-small-latest',
   'mistral-medium-latest',
-  'mistral-large-latest'
+  'mistral-large-latest',
+  'mistral-embed',
+  'codestral-latest',
 ];
 
 export const defaultModel = 'mistral-small-latest';
@@ -30,40 +33,47 @@ export const defaultModel = 'mistral-small-latest';
 export const modelMaxToken = {
   'open-mistral-7b': 16384,
   'open-mixtral-8x7b': 16384,
+  'open-mixtral-8x22b': 65536,
   'mistral-small-latest': 32768,
   'mistral-medium-latest': 32768,
-  'mistral-large-latest': 32768
+  'mistral-large-latest': 32768,
+  'mistral-embed': 8192,
+  'codestral-latest': 32768
 };
 
 export const modelCost = {
   'open-mistral-7b': {
-    prompt: { price: 0.00025, unit: 1000 },
-    completion: {price: 0.00025, unit: 1000}
+    prompt: { price: 0.00025, unit: 1000000 },
+    completion: { price: 0.00025, unit: 1000000 }
   },
   'open-mixtral-8x7b': {
-    prompt: { price: 0.0007, unit: 1000 },
-    completion: {price: 0.0007, unit: 1000}
+    prompt: { price: 0.0007, unit: 1000000 },
+    completion: { price: 0.0007, unit: 1000000 }
   },
-  'mistral-small': {
-    prompt: { price: 0.002, unit: 1000 },
-    completion: {price: 0.006, unit: 1000}
-  },
-  'mistral-medium': {
-    prompt: { price: 0.0027, unit: 1000 },
-    completion: {price: 0.0081, unit: 1000}
+  'open-mixtral-8x22b': {
+    prompt: { price: 2.0, unit: 1000000 },
+    completion: { price: 6.0, unit: 1000000 }
   },
   'mistral-small-latest': {
-    prompt: { price: 0.002, unit: 1000 },
-    completion: {price: 0.006, unit: 1000}
+    prompt: { price: 1.0, unit: 1000000 },
+    completion: { price: 3.0, unit: 1000000 }
+  },
+  'codestral-latest': {
+    prompt: { price: 1.0, unit: 1000000 },
+    completion: { price: 3.0, unit: 1000000 }
   },
   'mistral-medium-latest': {
-    prompt: { price: 0.0027, unit: 1000 },
-    completion: {price: 0.0081, unit: 1000}
+    prompt: { price: 2.7, unit: 1000000 },
+    completion: { price: 8.1, unit: 1000000 }
   },
-  'mistral-large-latest' : {
-    prompt: { price: 0.008, unit: 1000 },
-    completion: {price: 0.024, unit: 1000}
+  'mistral-large-latest': {
+    prompt: { price: 4.0, unit: 1000000 },
+    completion: { price: 12.0, unit: 1000000 }
   },
+  'mistral-embed': {
+    prompt: { price: 0.0001, unit: 1000000 },
+    completion: { price: 0.0001, unit: 1000000 }
+  }
 };
 
 export const defaultUserMaxToken = 8192;
