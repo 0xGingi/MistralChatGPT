@@ -4,6 +4,13 @@ Introducing MistralChatGPT, a fork of [BetterChatGPT](https://github.com/ztjhz/B
 
 This is a fork of MistralChatGPT that includes newer models!
 
+* Includes newer models (22b and Codestral) 
+* Includes my attempt at using the free Codestral API (Autoswaps API Key when using free model)
+
+**Free Codestral API Endpoint does not work yet - Kept getting CORS on direct connection and 404 on Proxy but should autochange API Key when using model, will also have it change endpoint whenever it works**
+
+**I'm retarded so please help me get it working**
+
 ## Getting Started
 
 To get started with MistralChatGPT, simply follow these steps:
