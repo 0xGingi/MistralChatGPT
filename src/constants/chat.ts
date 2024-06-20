@@ -26,6 +26,7 @@ export const modelOptions: ModelOptions[] = [
   'mistral-large-latest',
   'mistral-embed',
   'codestral-latest',
+  'codestral-latest-free'
 ];
 
 export const defaultModel = 'mistral-small-latest';
@@ -38,7 +39,8 @@ export const modelMaxToken = {
   'mistral-medium-latest': 32768,
   'mistral-large-latest': 32768,
   'mistral-embed': 8192,
-  'codestral-latest': 32768
+  'codestral-latest': 32768,
+  'codestral-latest-free': 32768
 };
 
 export const modelCost = {
@@ -58,9 +60,9 @@ export const modelCost = {
     prompt: { price: 1.0, unit: 1000000 },
     completion: { price: 3.0, unit: 1000000 }
   },
-  'codestral-latest': { //free until august 1st
-    prompt: { price: 0.0, unit: 1000000 },
-    completion: { price: 0.0, unit: 1000000 }
+  'codestral-latest': {
+    prompt: { price: 1.0, unit: 1000000 },
+    completion: { price: 3.0, unit: 1000000 }
   },
   'mistral-medium-latest': {
     prompt: { price: 2.7, unit: 1000000 },
@@ -73,6 +75,10 @@ export const modelCost = {
   'mistral-embed': {
     prompt: { price: 0.0001, unit: 1000000 },
     completion: { price: 0.0001, unit: 1000000 }
+  },
+  'codestral-latest-free': {
+    prompt: { price: 0.0, unit: 1000000 },
+    completion: { price: 0.0, unit: 1000000 }
   }
 };
 

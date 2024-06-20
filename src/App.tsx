@@ -16,6 +16,7 @@ function App() {
   const setChats = useStore((state) => state.setChats);
   const setTheme = useStore((state) => state.setTheme);
   const setApiKey = useStore((state) => state.setApiKey);
+  const setCodestralApiKey = useStore((state) => state.setCodestralApiKey);
   const setCurrentChatIndex = useStore((state) => state.setCurrentChatIndex);
 
   useEffect(() => {
@@ -29,12 +30,17 @@ function App() {
     // legacy local storage
     const oldChats = localStorage.getItem('chats');
     const apiKey = localStorage.getItem('apiKey');
+    const codestralApiKey = localStorage.getItem('codestralApiKey');
     const theme = localStorage.getItem('theme');
 
     if (apiKey) {
       // legacy local storage
       setApiKey(apiKey);
       localStorage.removeItem('apiKey');
+    }
+
+    if (codestralApiKey) {
+      setCodestralApiKey(codestralApiKey);
     }
 
     if (theme) {

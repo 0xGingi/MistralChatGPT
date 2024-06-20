@@ -10,7 +10,7 @@
     "inputLabel": "API Key"
   },
   "codestralApiKey": {
-    "inputLabel": "Codestral API Key"
+    "inputLabel": "Codestral API Key (NOT WORKING)"
   },
   "customEndpoint": "Use custom API endpoint",
   "advancedConfig": "View advanced API configuration <0>here</0>",

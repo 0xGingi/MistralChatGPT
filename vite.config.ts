@@ -7,7 +7,7 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 export default defineConfig({
   server: {
     proxy: {
-      '/v1': 'https://api.mistral.ai'
+      '/v1': 'https://api.mistral.ai',
     }
   },
   plugins: [react(), wasm(), topLevelAwait()],

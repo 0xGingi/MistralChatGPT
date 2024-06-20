@@ -1,7 +1,7 @@
 import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface, ModelOptions } from '@type/chat';
 import { isAzureEndpoint } from '@utils/api';
-import { codestralAPIEndpoint } from '@constants/auth';
+import { codestralAPIEndpoint, officialAPIEndpoint } from '@constants/auth';
 import useStore from '@store/store';
 
 export const getChatCompletion = async (
@@ -18,7 +18,7 @@ export const getChatCompletion = async (
 
   const codestralApiKey = useStore.getState().codestralApiKey;
 
-  if ((endpoint === codestralAPIEndpoint || config.model === 'codestral-latest') && codestralApiKey) {
+  if ((endpoint === codestralAPIEndpoint || endpoint === officialAPIEndpoint || config.model === 'codestral-latest-free') && codestralApiKey) {
     headers.Authorization = `Bearer ${codestralApiKey}`;
   } else if (apiKey) {
     headers.Authorization = `Bearer ${apiKey}`;
@@ -73,7 +73,7 @@ export const getChatCompletionStream = async (
 
   const codestralApiKey = useStore.getState().codestralApiKey;
 
-  if ((endpoint === codestralAPIEndpoint || config.model === 'codestral-latest') && codestralApiKey) {
+  if ((endpoint === codestralAPIEndpoint || endpoint === officialAPIEndpoint || config.model === 'codestral-latest-free') && codestralApiKey) {
     headers.Authorization = `Bearer ${codestralApiKey}`;
   } else if (apiKey) {
     headers.Authorization = `Bearer ${apiKey}`;
