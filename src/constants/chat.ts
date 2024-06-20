@@ -58,9 +58,9 @@ export const modelCost = {
     prompt: { price: 1.0, unit: 1000000 },
     completion: { price: 3.0, unit: 1000000 }
   },
-  'codestral-latest': {
-    prompt: { price: 1.0, unit: 1000000 },
-    completion: { price: 3.0, unit: 1000000 }
+  'codestral-latest': { //free until august 1st
+    prompt: { price: 0.0, unit: 1000000 },
+    completion: { price: 0.0, unit: 1000000 }
   },
   'mistral-medium-latest': {
     prompt: { price: 2.7, unit: 1000000 },

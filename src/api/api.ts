@@ -18,7 +18,7 @@ export const getChatCompletion = async (
 
   const codestralApiKey = useStore.getState().codestralApiKey;
 
-  if (endpoint === codestralAPIEndpoint && codestralApiKey) {
+  if ((endpoint === codestralAPIEndpoint || config.model === 'codestral-latest') && codestralApiKey) {
     headers.Authorization = `Bearer ${codestralApiKey}`;
   } else if (apiKey) {
     headers.Authorization = `Bearer ${apiKey}`;
@@ -73,7 +73,7 @@ export const getChatCompletionStream = async (
 
   const codestralApiKey = useStore.getState().codestralApiKey;
 
-  if (endpoint === codestralAPIEndpoint && codestralApiKey) {
+  if ((endpoint === codestralAPIEndpoint || config.model === 'codestral-latest') && codestralApiKey) {
     headers.Authorization = `Bearer ${codestralApiKey}`;
   } else if (apiKey) {
     headers.Authorization = `Bearer ${apiKey}`;
