@@ -91,17 +91,17 @@ export const _defaultChatConfig: ConfigInterface = {
   top_p: 1
 };
 
-export const generateDefaultChat = (
-  title?: string,
-  folder?: string
-): ChatInterface => ({
+export const generateDefaultChat = (title?: string, folder?: string): ChatInterface => ({
   id: uuidv4(),
   title: title ? title : 'New Chat',
   messages:
     useStore.getState().defaultSystemMessage.length > 0
       ? [{ role: 'system', content: useStore.getState().defaultSystemMessage }]
       : [],
-  config: { ...useStore.getState().defaultChatConfig },
+  config: {
+    ...useStore.getState().defaultChatConfig,
+    model: useStore.getState().defaultChatConfig.model === 'codestral-latest-free' ? 'codestral-latest' : useStore.getState().defaultChatConfig.model,
+  },
   titleSet: false,
   folder,
 });
