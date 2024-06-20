@@ -2,11 +2,13 @@
 
 Introducing MistralChatGPT, a fork of [BetterChatGPT](https://github.com/ztjhz/BetterChatGPT) to make it easy to use Mistral.AI models.
 
+This is a fork of MistralChatGPT that includes newer models!
+
 ## Getting Started
 
 To get started with MistralChatGPT, simply follow these steps:
 
-1. Clone the repository by running `git clone https://github.com/Layoric/MistralChatGPT.git`
+1. Clone the repository by running `git clone https://github.com/0xGingi/MistralChatGPT.git`
 2. Install the dependencies by running `yarn` or `npm install`
 3. Run the app by running `yarn dev` or `npm run dev`
 4. Enter your Mistral AI API key into the `API` menu
@@ -14,12 +16,12 @@ To get started with MistralChatGPT, simply follow these steps:
 
 ## Obtaining an API Key
 
-You can obtain an API key by creating an account on the [Mistral AI website](https://mistral.ai/). Once you have created an account and have been granted access to their API, you can generate an API key from their [console](https://console.mistral.ai/user/api-keys/)
+You can obtain an API key by creating an account on the [Mistral AI website](https://mistral.ai/). Once you have created an account and have been granted access to their API, you can generate an API key from their [console](https://console.mistral.ai/api-keys/)
 
 ## Features
 
 - Utilizes Mistral AI for its conversational capabilities
-- Use any of the [models listed](https://github.com/Layoric/MistralChatGPT/blob/5313bde1444e0ed2ed6575febc6aa27a356bc2f5/src/constants/chat.ts#L20-L26)
+- Use any of the Mistral AI Models!
 - Simple and easy-to-use interface
 - Track your costs
 - Uses a proxy to bypass CORS limitations
