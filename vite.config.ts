@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/v1': 'https://api.mistral.ai',
-      '/codestral': 'https://codestral.mistral.ai/v1'
+      '/codestral': 'https://codestral.mistral.ai'
     }
   },
   plugins: [react(), wasm(), topLevelAwait()],

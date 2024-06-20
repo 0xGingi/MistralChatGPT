@@ -13,17 +13,18 @@ export const getChatCompletion = async (
 ) => {
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
+    'Accept': 'application/json',
     ...customHeaders,
   };
 
   const codestralApiKey = useStore.getState().codestralApiKey;
 
-  if ((endpoint === codestralAPIEndpoint || endpoint === officialAPIEndpoint || config.model === 'codestral-latest-free') && codestralApiKey) {
+  if (config.model === 'codestral-latest-free' && codestralApiKey) {
     headers.Authorization = `Bearer ${codestralApiKey}`;
   } else if (apiKey) {
     headers.Authorization = `Bearer ${apiKey}`;
   }
-
+    
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
@@ -73,12 +74,12 @@ export const getChatCompletionStream = async (
 
   const codestralApiKey = useStore.getState().codestralApiKey;
 
-  if ((endpoint === codestralAPIEndpoint || endpoint === officialAPIEndpoint || config.model === 'codestral-latest-free') && codestralApiKey) {
+  if (config.model === 'codestral-latest-free' && codestralApiKey) {
     headers.Authorization = `Bearer ${codestralApiKey}`;
   } else if (apiKey) {
     headers.Authorization = `Bearer ${apiKey}`;
   }
-
+  
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
