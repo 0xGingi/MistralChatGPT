@@ -9,6 +9,9 @@
     "howTo": "Get your personal API key <0>here</0>.",
     "inputLabel": "API Key"
   },
+  "codestralApiKey": {
+    "inputLabel": "Codestral API Key"
+  },
   "customEndpoint": "Use custom API endpoint",
   "advancedConfig": "View advanced API configuration <0>here</0>",
   "noApiKeyWarning": "No API key supplied! Please check your API settings."

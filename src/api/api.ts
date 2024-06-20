@@ -1,6 +1,8 @@
 import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface, ModelOptions } from '@type/chat';
 import { isAzureEndpoint } from '@utils/api';
+import { codestralAPIEndpoint } from '@constants/auth';
+import useStore from '@store/store';
 
 export const getChatCompletion = async (
   endpoint: string,
@@ -13,7 +15,14 @@ export const getChatCompletion = async (
     'Content-Type': 'application/json',
     ...customHeaders,
   };
-  if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
+
+  const codestralApiKey = useStore.getState().codestralApiKey;
+
+  if (endpoint === codestralAPIEndpoint && codestralApiKey) {
+    headers.Authorization = `Bearer ${codestralApiKey}`;
+  } else if (apiKey) {
+    headers.Authorization = `Bearer ${apiKey}`;
+  }
 
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
@@ -61,7 +70,14 @@ export const getChatCompletionStream = async (
     'Content-Type': 'application/json',
     ...customHeaders,
   };
-  if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
+
+  const codestralApiKey = useStore.getState().codestralApiKey;
+
+  if (endpoint === codestralAPIEndpoint && codestralApiKey) {
+    headers.Authorization = `Bearer ${codestralApiKey}`;
+  } else if (apiKey) {
+    headers.Authorization = `Bearer ${apiKey}`;
+  }
 
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;

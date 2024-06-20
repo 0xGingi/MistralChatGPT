@@ -10,10 +10,13 @@ const ApiPopup = () => {
 
   const apiKey = useStore((state) => state.apiKey);
   const setApiKey = useStore((state) => state.setApiKey);
+  const codestralApiKey = useStore((state) => state.codestralApiKey);
+  const setCodestralApiKey = useStore((state) => state.setCodestralApiKey);
   const firstVisit = useStore((state) => state.firstVisit);
   const setFirstVisit = useStore((state) => state.setFirstVisit);
 
   const [_apiKey, _setApiKey] = useState<string>(apiKey || '');
+  const [_codestralApiKey, _setCodestralApiKey] = useState<string>(codestralApiKey || '');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(
     !apiKey && firstVisit
   );
@@ -25,6 +28,7 @@ const ApiPopup = () => {
     } else {
       setError('');
       setApiKey(_apiKey);
+      setCodestralApiKey(_codestralApiKey);
       setIsModalOpen(false);
     }
   };
@@ -55,13 +59,27 @@ const ApiPopup = () => {
           />
         </div>
 
+        <div className='flex gap-2 items-center justify-center mt-2'>
+          <div className='min-w-fit text-gray-900 dark:text-gray-300 text-sm'>
+            {t('codestralApiKey.inputLabel', { ns: 'api' })}
+          </div>
+          <input
+            type='text'
+            className='text-gray-800 dark:text-white p-3 text-sm border-none bg-gray-200 dark:bg-gray-600 rounded-md m-0 w-full mr-0 h-8 focus:outline-none'
+            value={_codestralApiKey}
+            onChange={(e) => {
+              _setCodestralApiKey(e.target.value);
+            }}
+          />
+        </div>
+
         <div className='min-w-fit text-gray-900 dark:text-gray-300 text-sm mt-4'>
           <Trans
             i18nKey='apiKey.howTo'
             ns='api'
             components={[
               <a
-                href='https://console.mistral.ai/user/api-keys'
+                href='https://console.mistral.ai'
                 className='link'
                 target='_blank'
               />,

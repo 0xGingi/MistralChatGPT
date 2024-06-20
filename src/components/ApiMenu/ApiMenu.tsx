@@ -19,10 +19,13 @@ const ApiMenu = ({
 
   const apiKey = useStore((state) => state.apiKey);
   const setApiKey = useStore((state) => state.setApiKey);
+  const codestralApiKey = useStore((state) => state.codestralApiKey);
+  const setCodestralApiKey = useStore((state) => state.setCodestralApiKey);
   const apiEndpoint = useStore((state) => state.apiEndpoint);
   const setApiEndpoint = useStore((state) => state.setApiEndpoint);
 
   const [_apiKey, _setApiKey] = useState<string>(apiKey || '');
+  const [_codestralApiKey, _setCodestralApiKey] = useState<string>(codestralApiKey || '');
   const [_apiEndpoint, _setApiEndpoint] = useState<string>(apiEndpoint);
   const [_customEndpoint, _setCustomEndpoint] = useState<boolean>(
     !availableEndpoints.includes(apiEndpoint)
@@ -30,6 +33,7 @@ const ApiMenu = ({
 
   const handleSave = () => {
     setApiKey(_apiKey);
+    setCodestralApiKey(_codestralApiKey);
     setApiEndpoint(_apiEndpoint);
     setIsModalOpen(false);
   };
@@ -92,6 +96,20 @@ const ApiMenu = ({
           />
         </div>
 
+        <div className='flex gap-2 items-center justify-center mt-2'>
+          <div className='min-w-fit text-gray-900 dark:text-gray-300 text-sm'>
+            {t('codestralApiKey.inputLabel', { ns: 'api' })}
+          </div>
+          <input
+            type='text'
+            className='text-gray-800 dark:text-white p-3 text-sm border-none bg-gray-200 dark:bg-gray-600 rounded-md m-0 w-full mr-0 h-8 focus:outline-none'
+            value={_codestralApiKey}
+            onChange={(e) => {
+              _setCodestralApiKey(e.target.value);
+            }}
+          />
+        </div>
+
         <div className='min-w-fit text-gray-900 dark:text-gray-300 text-sm flex flex-col gap-3 leading-relaxed'>
           <p className='mt-4'>
             <Trans
@@ -99,7 +117,7 @@ const ApiMenu = ({
               ns='api'
               components={[
                 <a
-                  href='https://console.mistral.ai/user/api-keys'
+                  href='https://console.mistral.ai'
                   className='link'
                   target='_blank'
                 />,
@@ -143,25 +161,26 @@ const ApiEndpointSelector = ({
         ref={dropDownRef}
         className={`${
           dropDown ? '' : 'hidden'
-        } absolute top-100 bottom-100 z-10 bg-white rounded-lg shadow-xl border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group dark:bg-gray-800 opacity-90 w-32 w-full`}
+        } absolute top-100 bottom-auto left-0 right-0 z-10 mt-1 w-full rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
       >
-        <ul
-          className='text-sm text-gray-700 dark:text-gray-200 p-0 m-0'
-          aria-labelledby='dropdownDefaultButton'
-        >
+        <div className='py-1'>
           {availableEndpoints.map((endpoint) => (
-            <li
-              className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer truncate'
+            <button
+              key={endpoint}
+              className={`${
+                _apiEndpoint === endpoint
+                  ? 'bg-gray-100 text-gray-900'
+                  : 'text-gray-700'
+              } block w-full text-left px-4 py-2 text-sm`}
               onClick={() => {
                 _setApiEndpoint(endpoint);
                 setDropDown(false);
               }}
-              key={endpoint}
             >
               {endpoint}
-            </li>
+            </button>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
