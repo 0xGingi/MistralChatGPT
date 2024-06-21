@@ -1,12 +1,12 @@
 {
-  "name": "better-chatgpt",
+  "name": "better-mistralgpt",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "homepage": "./",
   "main": "electron/index.cjs",
-  "author": "Jing Hua <betterchatgpt@mail.tjh.sg>",
-  "description": "Play and chat smarter with BetterChatGPT - an amazing open-source web app with a better UI for exploring OpenAI's ChatGPT API!",
+  "author": "0xGingi",
+  "description": "Play and chat smarter with MistralChatGPT - an amazing open-source web app with a better UI for exploring Mistrals AI's GPT API!",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
@@ -16,8 +16,8 @@
     "make": "yarn build && electron-builder"
   },
   "build": {
-    "appId": "better-chatgpt",
-    "productName": "Better ChatGPT",
+    "appId": "better-mistralgpt",
+    "productName": "Better MistralGPT",
     "artifactName": "${os}-${name}-${version}-${arch}.${ext}",
     "directories": {
       "output": "release"
@@ -80,8 +80,8 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "concurrently": "^8.0.1",
-    "electron": "^23.2.0",
-    "electron-builder": "^23.6.0",
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",
     "typescript": "^4.9.3",

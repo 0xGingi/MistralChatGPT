@@ -15,5 +15,5 @@ RUN yarn install --frozen-lockfile
 COPY --chown=appuser:appgroup . .
 RUN yarn build
 
-EXPOSE 3000
-CMD ["/home/appuser/.yarn/bin/serve", "-s", "dist", "-l", "3000"]
+EXPOSE 3030
+CMD ["/home/appuser/.yarn/bin/serve", "-s", "dist", "-l", "3030"]
