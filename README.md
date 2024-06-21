@@ -40,14 +40,3 @@ You can obtain an API key by creating an account on the [Mistral AI website](htt
 ## Original Authors
 
 This project was forked from BetterChatGPT, which is an amazing project created by [@ztjhz](https://github.com/ztjhz). You can find the original repository [here](https://github.com/ztjhz/BetterChatGPT), be sure to star it!
-
-## Sponsors
-
-If you have enjoyed using this app and would like to support the original authors, please consider sponsoring them through one of the methods below.
-
-| Payment Method | Link                                                                                                                                                 |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GitHub         | [![GitHub Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/ztjhz) |
-| KoFi           | [![support](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/betterchatgpt)                                                             |
-| Alipay (Ayaka) | <img src="https://ayaka14732.github.io/sponsor/alipay.jpg" width=150 />                                                                              |
-| Wechat (Ayaka) | <img src="https://ayaka14732.github.io/sponsor/wechat.png" width=150 />                                                                              |
