@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 const {
   app,
@@ -258,10 +259,19 @@ const createServer = () => {
   // Create a http server
   const server = http.createServer((request, response) => {
     // Get the file path from the URL
-    let filePath =
-      request.url === '/'
-        ? `${path.join(__dirname, '../dist/index.html')}`
-        : `${path.join(__dirname, `../dist/${request.url}`)}`;
+    let filePath = request.url === '/'
+    ? path.join(__dirname, '../dist/index.html')
+    : path.join(__dirname, `../dist/${request.url}`);
+    // Normalize the path to resolve any '..' or '.' segments
+    filePath = path.normalize(filePath);
+
+    if (!filePath.startsWith(path.join(__dirname, '../dist'))) {
+      // If it's not, send a 403 Forbidden response
+      response.writeHead(403);
+      response.end('Forbidden');
+      return;
+    }
+    
 
     // Get the file extension from the filePath
     let extname = path.extname(filePath);
