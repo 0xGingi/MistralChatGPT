@@ -262,10 +262,13 @@ const createServer = () => {
     let filePath = request.url === '/'
     ? path.join(__dirname, '../dist/index.html')
     : path.join(__dirname, `../dist/${request.url}`);
+    
     // Normalize the path to resolve any '..' or '.' segments
     filePath = path.normalize(filePath);
 
-    if (!filePath.startsWith(path.join(__dirname, '../dist'))) {
+    const expectedPath = path.join(__dirname, '../dist');
+
+    if (!filePath.startsWith(expectedPath)) {
       // If it's not, send a 403 Forbidden response
       response.writeHead(403);
       response.end('Forbidden');
