@@ -1,9 +1,10 @@
-FROM node:slim
+FROM node:alpine
 
 RUN addgroup -S appgroup && \
   adduser -S appuser -G appgroup && \
   mkdir -p /home/appuser/app && \
   chown appuser:appgroup /home/appuser/app
+
 USER appuser
 
 RUN yarn config set prefix ~/.yarn && \
