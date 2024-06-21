@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:slim
 
 RUN addgroup -S appgroup && \
   adduser -S appuser -G appgroup && \
