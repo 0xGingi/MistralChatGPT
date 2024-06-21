@@ -9,7 +9,10 @@ This is a fork of MistralChatGPT that includes newer models!
 
 **Free Codestral API Endpoint does not work yet - Kept getting CORS on direct connection and 404 on Proxy but should autochange API Key when using model, will also have it change endpoint whenever it works**
 
-**I'm retarded so please help me get it working**
+## Docker
+```docker pull 0xgingi/mistralchatgpt:latest```
+
+```docker run -p 3030:3030 -d --restart=always 0xgingi/mistralchatgpt```
 
 ## Getting Started
 
