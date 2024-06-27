@@ -7,7 +7,7 @@ This is a fork of MistralChatGPT that includes newer models!
 * Includes newer models (22b and Codestral) 
 * Includes my attempt at using the free Codestral API (Autoswaps API Key when using free model)
 
-**Free Codestral API Endpoint does not work yet - Kept getting CORS on direct connection and 404 on Proxy but should autochange API Key when using model, will also have it change endpoint whenever it works**
+**Free Codestral API Endpoint does not work yet - Kept getting CORS Error**
 
 ## Docker
 ```docker pull 0xgingi/mistralchatgpt:latest```
@@ -34,7 +34,6 @@ You can obtain an API key by creating an account on the [Mistral AI website](htt
 - Use any of the Mistral AI Models!
 - Simple and easy-to-use interface
 - Track your costs
-- Uses a proxy to bypass CORS limitations
 - Runs on Vite for fast development
 
 ## Original Authors

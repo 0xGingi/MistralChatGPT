@@ -1,7 +1,7 @@
 import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface, ModelOptions } from '@type/chat';
 import { isAzureEndpoint } from '@utils/api';
-import { codestralAPIEndpoint, officialAPIEndpoint } from '@constants/auth';
+import { defaultAPIEndpoint, codestralAPIEndpoint } from '@constants/auth';
 import useStore from '@store/store';
 
 export const getChatCompletion = async (
